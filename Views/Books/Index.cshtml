@@ -1,4 +1,30 @@
+@model IEnumerable<Fisher.Bookstore.Models.Book>
+
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Books Page";
 }
-<p>This is the books page.</p>
+
+<div class = "row">
+    <div c;ass = "col-lg-12">
+        <h2>Books Currently in Stock</h2>
+        <h3>Last updated: @(System.DateTime.Now)</h3>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Book</th>
+                    <th>Author</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var book in Model)
+                {
+                    <tr>
+                        <td>@book.Title</td>
+                        <td>@book.Author.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
