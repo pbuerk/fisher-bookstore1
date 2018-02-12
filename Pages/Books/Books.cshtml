@@ -6,7 +6,6 @@
     ViewData["Title"] = "Books Page";
 }
 
-
 <div class = "row">
     <div class = "col-lg-12">
         <h2>Books Currently in Stock</h2>
@@ -20,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var book in Model.books)
+                @foreach (var book in Pages.books)
                 {
                     <tr>
                         <td>@book.Title</td>

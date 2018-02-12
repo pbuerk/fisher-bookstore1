@@ -1,14 +1,28 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
-using Fisher.Bookstore.Models;
+using Fisher.Bookstore.Pages;
 using System.Collections.Generic;
 
 namespace Fisher.Bookstore.Pages
 {
+    public class Book
+    {
+        public int BookId { get; set; }
+
+        public string Title { get; set; }
+
+        public Author Author { get; set; }
+
+        public void SellBook()
+        {
+            //code to sell book goes here
+        }
+    }
     public class Books : PageModel
     {
         public List<Book> books;
-        public void OnGet()
+        
+        public IEnumerable<Book> OnGet()
         {
             books = new List<Book>();
 
@@ -24,6 +38,7 @@ namespace Fisher.Bookstore.Pages
             {
                 Title = "The Goal",
                 Author = new Author() {Name = "Eliyahu Goldratt"}});        
+        return books;
         }
     }
 }
