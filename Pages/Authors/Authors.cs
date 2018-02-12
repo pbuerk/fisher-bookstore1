@@ -1,6 +1,6 @@
 using System;
 
-namespace Fisher.Bookstore.Pages
+namespace Fisher.Bookstore.Models
 {
     public class Author
     {
